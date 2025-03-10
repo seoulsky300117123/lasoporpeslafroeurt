@@ -40,7 +40,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url(https://ifh.cc/v-kDNyMS); /* 이미지 경로를 절대 경로로 지정 */
+    background-image: url("https://github.com/seoulsky300117123/lasoporpeslafroeurt/blob/main/SEO.jpg"); /* 이미지 경로를 절대 경로로 지정 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
