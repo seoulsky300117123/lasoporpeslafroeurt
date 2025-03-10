@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응모 폼</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SEOUL SKY</h1>
+    </header>
+    <main>
+        <form id="form" onsubmit="return validateForm()">
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="dob">생년월일:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <button type="submit">확인</button>
+        </form>
+    </main>
+
+    <script>
+        // 폼 제출 시 이름과 생년월일을 확인하는 함수
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const dob = document.getElementById("dob").value;
+
+            // 이름과 생년월일이 정확한지 확인
+            if (name !== "김시헌" || dob !== "2000-03-09") {
+                alert("죄송합니다. 귀하는 당첨자 명단에 없습니다.");
+                return false;  // 폼 제출을 막음
+            }
+
+            // 정확하면 3번째 페이지로 이동
+            location.href = "confirmation.html";  // 여기서 3번째 페이지로 이동합니다
+            return false;  // 폼 제출을 막고, 페이지 이동만 수행
+        }
+    </script>
+</body>
+</html>
