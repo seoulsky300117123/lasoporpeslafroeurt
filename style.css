@@ -33,18 +33,23 @@ header p {
     margin-bottom: 20px;
 }
 
-/* 메인 영역 (폼을 포함) */
+/* 메인 영역 (이미지 배경과 폼을 포함) */
 main {
     flex-grow: 1; /* 화면에서 폼 영역을 적당히 꽉 채우도록 */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background-image: url("https://ifh.cc/v-kDNyMS"); /* 이미지 경로를 절대 경로로 지정 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* 전체 너비 */
 }
 
 /* 폼 스타일링 (네모 안에) */
 form {
-    background-color: #f4f4f4;
+    background-color: rgba(244, 244, 244, 0.8); /* 약간 투명한 배경 */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -84,14 +89,4 @@ form button {
 
 form button:hover {
     background-color: #002244;
-}
-
-/* 하단 이미지 스타일 */
-body::after {
-    content: '';
-    display: block;
-    height: 300px; /* 하단 이미지 영역 높이 */
-    background-image: url('images/SEO.jpg'); /* 이미지 경로를 상대 경로로 수정 */
-    background-size: cover;
-    background-position: center;
 }
