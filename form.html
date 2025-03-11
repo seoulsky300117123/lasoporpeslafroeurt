@@ -30,5 +30,15 @@
             const dob = document.getElementById("dob").value;
 
             // 이름과 생년월일이 정확한지 확인
-            if (name !== "김시헌" || dob !== "2000-03-09") {
-                alert("죄송합니다. 귀하는 당첨자 명
+            if (name === "김시헌" && dob === "2000-03-09") {
+                // 조건을 만족하면 3번째 페이지로 이동
+                window.location.href = "confirmation.html";  // 3번째 페이지 URL 확인
+                return false;  // 폼 제출을 막고 페이지 이동
+            } else {
+                alert("죄송합니다. 귀하는 당첨자 명단에 없습니다.");
+                return false;  // 폼 제출을 막고 경고 메시지를 표시
+            }
+        }
+    </script>
+</body>
+</html>
