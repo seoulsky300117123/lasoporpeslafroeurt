@@ -22,10 +22,24 @@
         #qrcode img {
             pointer-events: none;
         }
-        /* 움직이는 이미지 스타일 */
-        #moving-image img {
-            width: 200px;  /* 크기를 조정 */
-            margin-top: 20px;
+
+        /* 움직이는 글씨 스타일 */
+        #moving-text {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FF5733;  /* 글씨 색상 */
+            margin-top: 30px;
+            animation: moveText 5s linear infinite; /* 텍스트 애니메이션 설정 */
+        }
+
+        /* 텍스트 애니메이션 */
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%); /* 오른쪽에서 왼쪽으로 이동 */
+            }
+            100% {
+                transform: translateX(-100%); /* 왼쪽으로 이동 */
+            }
         }
     </style>
 </head>
@@ -38,9 +52,9 @@
         <img src="https://ifh.cc/g/rPkYdJ.jpg" alt="QR 코드 이미지">
     </div>
 
-    <!-- 움직이는 이미지 -->
-    <div id="moving-image">
-        <img src="https://example.com/animated-image.gif" alt="움직이는 이미지">
+    <!-- 움직이는 글씨 -->
+    <div id="moving-text">
+        축하합니다! 멋진 경험을 시작하세요!
     </div>
 
     <!-- 타이머 -->
