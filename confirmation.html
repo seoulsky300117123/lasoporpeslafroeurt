@@ -35,7 +35,7 @@
 
     <!-- QR 코드 이미지 -->
     <div id="qrcode">
-        <img id="qr-code" src="https://ifh.cc/g/rPkYdJ.jpg" alt="QR 코드 이미지">
+        <img src="https://ifh.cc/g/rPkYdJ.jpg" alt="QR 코드 이미지">
     </div>
 
     <!-- 움직이는 이미지 -->
@@ -50,7 +50,6 @@
         // 타이머 설정 (10초)
         let timeLeft = 10;
         const timerElement = document.getElementById('timer');
-        const qrCodeImage = document.getElementById('qr-code');
 
         function updateTimer() {
             if (timeLeft > 0) {
@@ -65,24 +64,6 @@
         }
 
         setInterval(updateTimer, 1000);  // 1초마다 타이머 업데이트
-
-        // 캡처 방지 및 QR 코드 변경
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                // 페이지가 숨겨졌을 때 QR 코드 이미지를 흰색으로 변경
-                qrCodeImage.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/akdmuEAAAAASUVORK5CYII=';
-            }
-        });
-
-        // 모바일 환경에서 캡처를 시도할 경우 흰색으로 변경
-        if (/Mobi|Android/i.test(navigator.userAgent)) {
-            document.addEventListener("touchstart", function(e) {
-                if (e.touches.length > 1) {
-                    // 여러 손가락으로 화면을 터치 시 QR 코드를 흰색으로 변경
-                    qrCodeImage.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/akdmuEAAAAASUVORK5CYII=';
-                }
-            });
-        }
     </script>
 </body>
 </html>
